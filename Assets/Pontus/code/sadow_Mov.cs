@@ -19,7 +19,7 @@ public class sadow_Mov : MonoBehaviour
         {
             for(int i = 1; i <= shadowList.Count; i++) 
             {
-            
+                
             }
         }
     }

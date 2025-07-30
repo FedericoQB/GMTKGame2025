@@ -11,7 +11,7 @@ public static class Tracking
 {
     public static  List<int> tracking = new List<int>();
     public static int moves;
-    public static int maxMoves = 10;
+    public static int maxMoves = 1000000;
     public static int shadowOrder = 1;
     public static int currentShadow = 1;
 }
