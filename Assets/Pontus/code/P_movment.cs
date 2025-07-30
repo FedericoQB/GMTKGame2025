@@ -65,12 +65,11 @@ public class P_movment : MonoBehaviour
             }
             else
             {
-                /*
-                Player.transform.position = new Vector2(xPos, yPos + 1);
-                Player.transform.rotation = Quaternion.Euler(180, 0, 0);
-                moves--;
-                Moves.text = moves.ToString();
-                */
+                Collider2D hitChest = Physics2D.OverlapPoint(laserV2, LayerMask.GetMask("ground"));
+                if (hitChest.CompareTag("Chest")) 
+                {
+                
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.S) && Tracking.moves > 0)
