@@ -11,6 +11,7 @@ public static class Tracking
 {
     public static  List<int> tracking = new List<int>();
     public static int moves;
+    public static int maxMoves = 10;
 }
 
 public class P_movment : MonoBehaviour
@@ -22,7 +23,6 @@ public class P_movment : MonoBehaviour
     private bool isDiagonal = false;
     private float xPos;
     private float yPos;
-    private int movesMax = 10000;
 
 
     public Vector2 movement;
@@ -37,7 +37,7 @@ public class P_movment : MonoBehaviour
         OrgMovementSpeed = speed;  // Store original speed
         movementSpeed = speed;     // Set movementSpeed to the original speed
         movementSpeed07 = speed * 0.6f;  // Set diagonal movement speed (60% of the normal speed)
-        Tracking.moves = movesMax;
+        Tracking.moves = Tracking.maxMoves;
         Moves.text = Tracking.moves.ToString();
     }
 
