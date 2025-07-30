@@ -136,5 +136,9 @@ public class P_movment : MonoBehaviour
             }
         }
 
+        if (Tracking.moves == 0) 
+        {
+            
+        }
     }
 }
