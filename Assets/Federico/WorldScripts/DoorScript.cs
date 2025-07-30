@@ -24,8 +24,18 @@ public class DoorScript : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("Is Locked");
         }
+    }
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
+    }
+
+    public void LockDoor()
+    {
+        isLocked = true;
     }
 }
 

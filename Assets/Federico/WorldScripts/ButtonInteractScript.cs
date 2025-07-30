@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractScript : MonoBehaviour
+public class ButtonInteractScript : MonoBehaviour
 {
     public bool isInRange;
     public KeyCode interactKey;

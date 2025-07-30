@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraManager : MonoBehaviour
 {
     Camera camera;
+    GameObject cameraObject;
 
     public List<Transform> cameraPositions = new List<Transform>();
 
@@ -12,5 +13,6 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         camera = Camera.main;
-    }
+        cameraObject = camera.gameObject;
+    }   
 }
