@@ -10,6 +10,7 @@ public static class Tags
 public static class Tracking
 {
     public static  List<int> tracking = new List<int>();
+    public static int moves;
 }
 
 public class P_movment : MonoBehaviour
@@ -21,7 +22,6 @@ public class P_movment : MonoBehaviour
     private bool isDiagonal = false;
     private float xPos;
     private float yPos;
-    private int moves;
     private int movesMax = 10000;
 
 
@@ -37,8 +37,8 @@ public class P_movment : MonoBehaviour
         OrgMovementSpeed = speed;  // Store original speed
         movementSpeed = speed;     // Set movementSpeed to the original speed
         movementSpeed07 = speed * 0.6f;  // Set diagonal movement speed (60% of the normal speed)
-        moves = movesMax;
-        Moves.text = moves.ToString();
+        Tracking.moves = movesMax;
+        Moves.text = Tracking.moves.ToString();
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class P_movment : MonoBehaviour
         yPos = Mathf.RoundToInt(Player.transform.position.y);
 
 
-        if (Input.GetKeyDown(KeyCode.W) && moves > 0)
+        if (Input.GetKeyDown(KeyCode.W) && Tracking.moves > 0)
         {
             laserV2 = new Vector2(xPos, yPos + 1);
             Collider2D hit = Physics2D.OverlapPoint(laserV2, LayerMask.GetMask("ground"));
@@ -55,8 +55,8 @@ public class P_movment : MonoBehaviour
             {
                 Player.transform.position = new Vector2(xPos, yPos + 1);
                 Player.transform.rotation = Quaternion.Euler(0, 0, 0);
-                moves--;
-                Moves.text = moves.ToString();
+                Tracking.moves--;
+                Moves.text = Tracking.moves.ToString();
                 Tracking.tracking.Add(1);
             }
             else
@@ -69,7 +69,7 @@ public class P_movment : MonoBehaviour
                 */
             }
         }
-        if (Input.GetKeyDown(KeyCode.S) && moves > 0)
+        if (Input.GetKeyDown(KeyCode.S) && Tracking.moves > 0)
         {
             laserV2 = new Vector2(xPos, yPos - 1);
             Collider2D hit = Physics2D.OverlapPoint(laserV2, LayerMask.GetMask("ground"));
@@ -77,8 +77,8 @@ public class P_movment : MonoBehaviour
             {
                 Player.transform.position = new Vector2(xPos, yPos - 1);
                 Player.transform.rotation = Quaternion.Euler(180, 0, 0);
-                moves--;
-                Moves.text = moves.ToString();
+                Tracking.moves--;
+                Moves.text = Tracking.moves.ToString();
                 Tracking.tracking.Add(2);
             }
             else
@@ -91,7 +91,7 @@ public class P_movment : MonoBehaviour
                 */
             }
         }
-        if (Input.GetKeyDown(KeyCode.D) && moves > 0)
+        if (Input.GetKeyDown(KeyCode.D) && Tracking.moves > 0)
         {
             laserV2 = new Vector2(xPos + 1, yPos);
             Collider2D hit = Physics2D.OverlapPoint(laserV2, LayerMask.GetMask("ground"));
@@ -99,8 +99,8 @@ public class P_movment : MonoBehaviour
             {
                 Player.transform.position = new Vector2(xPos + 1, yPos);
                 Player.transform.rotation = Quaternion.Euler(0, 0, 270);
-                moves--;
-                Moves.text = moves.ToString();
+                Tracking.moves--;
+                Moves.text = Tracking.moves.ToString();
                 Tracking.tracking.Add(3);
             }
             else
@@ -113,7 +113,7 @@ public class P_movment : MonoBehaviour
                 */
             }
         }
-        if (Input.GetKeyDown(KeyCode.A) && moves > 0)
+        if (Input.GetKeyDown(KeyCode.A) && Tracking.moves > 0)
         {
             laserV2 = new Vector2(xPos - 1, yPos);
             Collider2D hit = Physics2D.OverlapPoint(laserV2, LayerMask.GetMask("ground"));
@@ -121,8 +121,8 @@ public class P_movment : MonoBehaviour
             {
                 Player.transform.position = new Vector2(xPos - 1, yPos);
                 Player.transform.rotation = Quaternion.Euler(0, 0, 90);
-                moves--;
-                Moves.text = moves.ToString();
+                Tracking.moves--;
+                Moves.text = Tracking.moves.ToString();
                 Tracking.tracking.Add(4);
             }
             else
