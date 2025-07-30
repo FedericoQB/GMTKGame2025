@@ -31,7 +31,7 @@ public class PhysicsInteractScript : MonoBehaviour
     {
         Debug.Log("Collided");
 
-        if (collision.tag == "Player" || collision.tag == "Shadow")
+        if (collision.tag == "Player" || collision.tag == "Shadow" || collision.tag == "Chest")
         {
             IsOnTop = true;
         }
@@ -39,7 +39,7 @@ public class PhysicsInteractScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Shadow")
+        if (collision.tag == "Player" || collision.tag == "Shadow" || collision.tag == "Chest")
         {
             IsOnTop = false;
         }
