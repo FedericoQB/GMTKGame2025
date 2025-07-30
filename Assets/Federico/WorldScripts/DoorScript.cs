@@ -8,10 +8,12 @@ public class DoorScript : MonoBehaviour
     GameObject player;
 
     public bool isLocked;
+    public bool cameraNextDoor;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        ExitStuff.emptyExitGlobal = emptyExit;
     }
 
     public void OpenDoor()
@@ -25,4 +27,9 @@ public class DoorScript : MonoBehaviour
 
         }
     }
+}
+
+public static class ExitStuff
+{
+    public static Transform emptyExitGlobal;
 }
