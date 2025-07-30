@@ -7,7 +7,7 @@ public class PhysicsInteractScript : MonoBehaviour
 {
     public bool IsOnTop;
     public UnityEvent pushedDownAction; // Pushed down and event will Invoke
-    public UnityEvent pushedUpAction; // Pushed up and event will invoke
+    public UnityEvent pushedUpAction; // Pushed up and event will Invoke
 
     void Start()
     {

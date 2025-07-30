@@ -8,7 +8,8 @@ public class SimpleDoorScript : MonoBehaviour
     GameObject player;
 
     public bool isLocked;
-    public bool cameraNextDoor;
+
+    public int nextLevelIndex;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class SimpleDoorScript : MonoBehaviour
         if (!isLocked)
         {
             player.transform.position = emptyExit.position;
+            LevelManager.currentLevel = nextLevelIndex;
         }
         else
         {
