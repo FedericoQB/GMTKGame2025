@@ -12,6 +12,8 @@ public static class Tracking
     public static  List<int> tracking = new List<int>();
     public static int moves;
     public static int maxMoves = 10;
+    public static int shadowOrder = 1;
+    public static int currentShadow = 1;
 }
 
 public class P_movment : MonoBehaviour
@@ -32,6 +34,8 @@ public class P_movment : MonoBehaviour
     public GameObject Player;
     private Vector2 laserV2;
     public TextMeshProUGUI Moves;
+
+    public GameObject shadow;
     private void Start()
     {
         OrgMovementSpeed = speed;  // Store original speed
@@ -138,7 +142,10 @@ public class P_movment : MonoBehaviour
 
         if (Tracking.moves == 0) 
         {
-            
+            Player.transform.position = new Vector2 (ExitStuff.emptyExitGlobal.position.x,ExitStuff.emptyExitGlobal.position.y);
+            Instantiate(shadow, Player.transform);
+            Tracking.shadowOrder++;
+
         }
     }
 }
