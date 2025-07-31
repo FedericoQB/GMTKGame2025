@@ -144,16 +144,16 @@ public class sadow_Mov : MonoBehaviour
                         if (chestHitWall == null || !chestHitWall.CompareTag(Tags.Wall))
                         {
                             Shadow.transform.position = new Vector2(xPos - 1, yPos);
-                            Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            Shadow.transform.rotation = Quaternion.Euler(0, 180, 0);
                             Chest.transform.position = new Vector2(ChestxPos - 1, ChestyPos);
-                            Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            Chest.transform.rotation = Quaternion.Euler(0, 180, 0);
                         }
                     }
 
                     else if (hit == null || !hit.CompareTag(Tags.Wall)) 
                     {
                         Shadow.transform.position = new Vector2(xPos - 1, yPos);
-                        Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                        Shadow.transform.rotation = Quaternion.Euler(0, 180, 0);
                     }
                     break;
             }
