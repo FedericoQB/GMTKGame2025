@@ -16,6 +16,9 @@ public class sadow_Mov : MonoBehaviour
     private Vector2 startPos;
     private bool hasTriggered = false;
 
+    public static Animator shadowAnimator;
+    public static bool isPlayingTeleAnimation;
+
     private void Start()
     {
         shadowList = new List<int>(Tracking.tracking);
@@ -24,9 +27,7 @@ public class sadow_Mov : MonoBehaviour
         startPos = Shadow.transform.position;
         canStart = true;
 
-
-
-
+        shadowAnimator = GetComponent<Animator>();
     }
 
     private void Update()

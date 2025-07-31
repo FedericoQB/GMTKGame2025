@@ -32,10 +32,6 @@ public class ButtonInteractScript : MonoBehaviour
         {
             isInRange = true;
         }
-        else if (collision.CompareTag("Shadow"))
-        {
-            
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
