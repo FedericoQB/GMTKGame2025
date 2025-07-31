@@ -35,20 +35,30 @@ public class TeleportScript : MonoBehaviour
         }
     }
 
-    public void Teleport()
+    public void Teleport(bool isShadow)
     {
-        if (!isLocked)
+        if (!isShadow)
+        {
+            if (!isLocked)
+            {
+                PlaySound();
+
+                TeleportAnimation();
+
+                if (continuesOnToNextLevel) LevelManager.currentLevel = nextLevelIndex;
+            }
+            else
+            {
+                Debug.Log("Is Locked");
+            }
+        }
+        else if (isShadow)
         {
             PlaySound();
 
-            TeleportAnimation();
-
-            if (continuesOnToNextLevel) LevelManager.currentLevel = nextLevelIndex;
+            TeleportAnimationShadow(); // IMPORTANT NOTICE. EDIT THE SHADOW SCRIPT TO HAVE ANIMATOR AND SAME VALUES FOR THIS FUNCTION TO WORK
         }
-        else
-        {
-            Debug.Log("Is Locked");
-        }
+        
     }
 
     public void ActivateTeleporter()
@@ -72,10 +82,10 @@ public class TeleportScript : MonoBehaviour
         Debug.Log("Teleporting");
         P_movment.isPlayingTeleAnimation = true;
         P_movment.playerAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
-        StartCoroutine(WaitForTeleportAnimation());
+        StartCoroutine(WaitForTeleportAnimationPlayer());
     }
 
-    private IEnumerator WaitForTeleportAnimation()
+    private IEnumerator WaitForTeleportAnimationPlayer()
     {
         yield return null;
         
@@ -102,6 +112,40 @@ public class TeleportScript : MonoBehaviour
         Debug.Log("Teleporting Finished");
     }
 
+    private void TeleportAnimationShadow()
+    {
+        Debug.Log("Teleporting");
+        P_movment.isPlayingTeleAnimation = true;
+        P_movment.playerAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
+        StartCoroutine(WaitForTeleportAnimationShadow());
+    }
+
+    private IEnumerator WaitForTeleportAnimationShadow()
+    {
+        yield return null;
+
+        AnimatorStateInfo stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
+
+        while (stateInfo.IsName("TeleportAnim"))
+        {
+            yield return null;
+            stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
+        }
+        yield return new WaitForSeconds(1.3f);
+
+        P_movment.isPlayingTeleAnimation = false;
+        P_movment.playerAnimator.SetBool("isTeleporting", false);
+
+        player.transform.position = emptyExit.position;
+
+        while (stateInfo.IsName("TeleportBackAnim"))
+        {
+            yield return null;
+            stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
+        }
+
+        Debug.Log("Teleporting Finished");
+    }
 }
 
 public static class ExitStuff

@@ -21,22 +21,26 @@ public class ButtonInteractScript : MonoBehaviour
         {
             if (Input.GetKeyDown(interactKey))
             {
-                interactAction.Invoke(); // Fires the event
+                interactAction.Invoke(); // Fires the event 
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             isInRange = true;
+        }
+        else if (collision.CompareTag("Shadow"))
+        {
+            
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             isInRange = false;
         }
