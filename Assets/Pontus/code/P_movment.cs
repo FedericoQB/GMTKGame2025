@@ -169,7 +169,7 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos - 1, yPos);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    Player.transform.rotation = Quaternion.Euler(0, 180, 0);
                     Tracking.moves--;
                     Tracking.tracking.Add(4);
                     Chest.transform.position = new Vector2(ChestxPos - 1, ChestyPos);
