@@ -70,8 +70,8 @@ public class TeleportScript : MonoBehaviour
     private void TeleportAnimation()
     {
         Debug.Log("Teleporting");
-        PlayerMovement.isPlayingTeleAnimation = true;
-        PlayerMovement.playerAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
+        P_movment.isPlayingTeleAnimation = true;
+        P_movment.playerAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
         StartCoroutine(WaitForTeleportAnimation());
     }
 
@@ -79,24 +79,24 @@ public class TeleportScript : MonoBehaviour
     {
         yield return null;
         
-        AnimatorStateInfo stateInfo = PlayerMovement.playerAnimator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
 
         while (stateInfo.IsName("TeleportAnim"))
         {
             yield return null;
-            stateInfo = PlayerMovement.playerAnimator.GetCurrentAnimatorStateInfo(0);
+            stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
         }
         yield return new WaitForSeconds(1.3f);
 
-        PlayerMovement.isPlayingTeleAnimation = false;
-        PlayerMovement.playerAnimator.SetBool("isTeleporting", false);
+        P_movment.isPlayingTeleAnimation = false;
+        P_movment.playerAnimator.SetBool("isTeleporting", false);
 
         player.transform.position = emptyExit.position;
 
         while (stateInfo.IsName("TeleportBackAnim"))
         {
             yield return null;
-            stateInfo = PlayerMovement.playerAnimator.GetCurrentAnimatorStateInfo(0);
+            stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
         }
 
         Debug.Log("Teleporting Finished");

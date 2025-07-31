@@ -20,22 +20,20 @@ public static class Tracking
 public class P_movment : MonoBehaviour
 {
     public float speed;
-    private float movementSpeed;
-    private float movementSpeed07;
-    private float OrgMovementSpeed;
-    private bool isDiagonal = false;
     private float xPos;
     private float yPos;
     private bool hasSpawnedShadow = false;
 
     public Vector2 movement;
-    public Rigidbody2D rb;
-    public Camera cam;
-    Vector2 mousePos;
-    public GameObject Player;
+    Rigidbody2D rb;
+    Camera cam;
+    GameObject Player;
     private Vector2 laserV2;
     private Vector2 ChestlaserV2;
     public TextMeshProUGUI Moves;
+
+    public static Animator playerAnimator;
+    public static bool isPlayingTeleAnimation;
 
     public GameObject Chest;
     private float ChestxPos;
@@ -44,11 +42,14 @@ public class P_movment : MonoBehaviour
     public GameObject shadow;
     private void Start()
     {
-        OrgMovementSpeed = speed;  // Store original speed
-        movementSpeed = speed;     // Set movementSpeed to the original speed
-        movementSpeed07 = speed * 0.6f;  // Set diagonal movement speed (60% of the normal speed)
         Tracking.moves = Tracking.maxMoves;
         Moves.text = Tracking.moves.ToString();
+
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+        Player = gameObject;
+
+        playerAnimator = GetComponent<Animator>();
 
     }
     private void Update()
@@ -168,7 +169,7 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos - 1, yPos);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    Player.transform.rotation = Quaternion.Euler(0, 0, 90);
                     Tracking.moves--;
                     Tracking.tracking.Add(4);
                     Chest.transform.position = new Vector2(ChestxPos - 1, ChestyPos);
@@ -178,7 +179,7 @@ public class P_movment : MonoBehaviour
             else if (hit == null || !hit.CompareTag(Tags.Wall))
             {
                 Player.transform.position = new Vector2(xPos - 1, yPos);
-                Player.transform.rotation = Quaternion.Euler(0, 0, 180);
+                Player.transform.rotation = Quaternion.Euler(0, 180, 0);
                 Tracking.moves--;
                 Tracking.tracking.Add(4);
             }
