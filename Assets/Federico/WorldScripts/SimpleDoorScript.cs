@@ -11,6 +11,8 @@ public class SimpleDoorScript : MonoBehaviour
 
     public int nextLevelIndex;
 
+    [SerializeField] private AudioClip doorOpening;
+
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -21,6 +23,7 @@ public class SimpleDoorScript : MonoBehaviour
     {
         if (!isLocked)
         {
+            PlaySound();
             player.transform.position = emptyExit.position;
             LevelManager.currentLevel = nextLevelIndex;
         }
@@ -38,6 +41,11 @@ public class SimpleDoorScript : MonoBehaviour
     public void LockDoor()
     {
         isLocked = true;
+    }
+
+    private void PlaySound()
+    {
+        SoundFXManager.instance.PlaySoundFXClip(doorOpening, transform, 1f);
     }
 }
 
