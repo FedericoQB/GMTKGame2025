@@ -68,16 +68,16 @@ public class sadow_Mov : MonoBehaviour
                         if (chestHitWall == null || !chestHitWall.CompareTag(Tags.Wall))
                         {
                             Shadow.transform.position = new Vector2(xPos , yPos +1);
-                            Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            //Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
                             Chest.transform.position = new Vector2(ChestxPos , ChestyPos + 1);
-                            Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            //Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
                         }
                     }
 
                     else if (hit == null || !hit.CompareTag(Tags.Wall))
                     {
                         Shadow.transform.position = new Vector2(xPos, yPos + 1);
-                        Shadow.transform.rotation = Quaternion.Euler(0, 0, 270);
+                        //Shadow.transform.rotation = Quaternion.Euler(0, 0, 270);
                     }
                     break;
 
@@ -93,16 +93,16 @@ public class sadow_Mov : MonoBehaviour
                         if (chestHitWall == null || !chestHitWall.CompareTag(Tags.Wall))
                         {
                             Shadow.transform.position = new Vector2(xPos , yPos - 1);
-                            Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            //Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
                             Chest.transform.position = new Vector2(ChestxPos, ChestyPos - 1);
-                            Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            //Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
                         }
                     }
 
                     else if (hit == null || !hit.CompareTag(Tags.Wall))
                     {
                         Shadow.transform.position = new Vector2(xPos, yPos - 1);
-                        Shadow.transform.rotation = Quaternion.Euler(0, 0, 90);
+                        //Shadow.transform.rotation = Quaternion.Euler(0, 0, 90);
                     }
                     break;
 
@@ -118,9 +118,9 @@ public class sadow_Mov : MonoBehaviour
                         if (chestHitWall == null || !chestHitWall.CompareTag(Tags.Wall))
                         {
                             Shadow.transform.position = new Vector2(xPos + 1, yPos);
-                            Shadow.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            Shadow.transform.rotation = Quaternion.Euler(0, 0, 0);
                             Chest.transform.position = new Vector2(ChestxPos + 1, ChestyPos);
-                            Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                            Chest.transform.rotation = Quaternion.Euler(0, 0, 0);
 
                         }
                     }
