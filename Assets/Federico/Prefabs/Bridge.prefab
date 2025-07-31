@@ -1185,7 +1185,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5162450977324344718}
-  - component: {fileID: 8988157270681974769}
   - component: {fileID: 8844827749071887477}
   m_Layer: 0
   m_Name: Bridge
@@ -1234,20 +1233,6 @@ Transform:
   - {fileID: 7896450981813073692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8988157270681974769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542277841715642018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd654d20704ffd4580ed39927ffd417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destinationEmpty: {fileID: 0}
-  speed: 0.01
 --- !u!50 &8844827749071887477
 Rigidbody2D:
   serializedVersion: 4

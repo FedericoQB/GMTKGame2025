@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    public static Animator playerAnimator;
 
     [SerializeField] private float speed;
 
@@ -18,10 +19,13 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform spawnLocation;
 
+    public static bool isPlayingTeleAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
         startTimer = timer;
     }
 
@@ -42,6 +46,15 @@ public class PlayerMovement : MonoBehaviour
         if (timer <= 0)
         {
             ResetPlayer();
+        }
+
+        if (horizontalInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (horizontalInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 
