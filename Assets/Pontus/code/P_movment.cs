@@ -84,7 +84,7 @@ public class P_movment : MonoBehaviour
             else if (hit == null || !hit.CompareTag(Tags.Wall))
             {
                 Player.transform.position = new Vector2(xPos, yPos + 1);
-                Player.transform.rotation = Quaternion.Euler(0, 0, 270);
+                Player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Tracking.moves--;
                 Tracking.tracking.Add(1);
             }
