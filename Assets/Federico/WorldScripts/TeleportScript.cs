@@ -71,7 +71,7 @@ public class TeleportScript : MonoBehaviour
     {
         Debug.Log("Teleporting");
         PlayerMovement.isPlayingTeleAnimation = true;
-        PlayerMovement.playerAnimator.SetBool("isTeleporting", true);
+        PlayerMovement.playerAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
         StartCoroutine(WaitForTeleportAnimation());
     }
 
