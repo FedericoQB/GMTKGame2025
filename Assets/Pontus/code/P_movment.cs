@@ -73,11 +73,11 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos, yPos + 1);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    //Player.transform.rotation = Quaternion.Euler(0, 0, 0);
                     Tracking.moves--;
                     Tracking.tracking.Add(1);
                     Chest.transform.position = new Vector2(ChestxPos, ChestyPos + 1);
-                    Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    //Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
             }
             else if (hit == null || !hit.CompareTag(Tags.Wall))
@@ -104,17 +104,17 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos, yPos - 1);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    //Player.transform.rotation = Quaternion.Euler(0, 0, 180);
                     Tracking.moves--;
                     Tracking.tracking.Add(2);
                     Chest.transform.position = new Vector2(ChestxPos, ChestyPos - 1);
-                    Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                   // Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
             }
             else if (hit == null || !hit.CompareTag(Tags.Wall))
             {
                 Player.transform.position = new Vector2(xPos, yPos - 1);
-                Player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                //Player.transform.rotation = Quaternion.Euler(0, 0, 90);
                 Tracking.moves--;
                 Tracking.tracking.Add(2);
             }
@@ -136,17 +136,17 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos + 1, yPos);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 270);
+                    Player.transform.rotation = Quaternion.Euler(0, 0, 0);
                     Tracking.moves--;
                     Tracking.tracking.Add(3);
                     Chest.transform.position = new Vector2(ChestxPos + 1, ChestyPos);
-                    Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    Chest.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
             }
             else if (hit == null || !hit.CompareTag(Tags.Wall))
             {
                 Player.transform.position = new Vector2(xPos + 1, yPos);
-                Player.transform.rotation = Quaternion.Euler(0, 0, 270);
+                Player.transform.rotation = Quaternion.Euler(0, 0, 0);
                 Tracking.moves--;
                 Tracking.tracking.Add(3);
             }
@@ -168,17 +168,17 @@ public class P_movment : MonoBehaviour
                 {
                     hit.transform.position = ChestlaserV2;
                     Player.transform.position = new Vector2(xPos - 1, yPos);
-                    Player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    Player.transform.rotation = Quaternion.Euler(0, 0, 180);
                     Tracking.moves--;
                     Tracking.tracking.Add(4);
                     Chest.transform.position = new Vector2(ChestxPos - 1, ChestyPos);
-                    Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    //Chest.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
             }
             else if (hit == null || !hit.CompareTag(Tags.Wall))
             {
                 Player.transform.position = new Vector2(xPos - 1, yPos);
-                Player.transform.rotation = Quaternion.Euler(0, 0, 90);
+                Player.transform.rotation = Quaternion.Euler(0, 0, 180);
                 Tracking.moves--;
                 Tracking.tracking.Add(4);
             }
