@@ -19,7 +19,10 @@ public class TeleportScript : MonoBehaviour
     [SerializeField] private Sprite turnedOn;
     [SerializeField] private Sprite turnedOff;
 
-    [SerializeField] private GameObject shadow;
+    [SerializeField] private List<GameObject> shadow = new List<GameObject>();
+    [SerializeField] private GameObject currentShadow;
+
+    int indexForShadow;
 
     private void Start()
     {
@@ -57,7 +60,7 @@ public class TeleportScript : MonoBehaviour
     {
         PlaySound();
 
-        TeleportAnimationShadow(); // IMPORTANT NOTICE. EDIT THE SHADOW SCRIPT TO HAVE ANIMATOR AND SAME VALUES FOR THIS FUNCTION TO WORK
+        TeleportAnimationShadow();
     }
 
     public void ActivateTeleporter()
@@ -138,7 +141,13 @@ public class TeleportScript : MonoBehaviour
         sadow_Mov.isPlayingTeleAnimation = false;
         sadow_Mov.shadowAnimator.SetBool("isTeleporting", false);
 
-        shadow.transform.position = emptyExit.position;
+        foreach (GameObject gameObject in shadow)
+        {
+            shadow[indexForShadow].transform.position = emptyExit.position;
+            indexForShadow++;
+        }
+
+        indexForShadow = 0;
 
         while (stateInfo.IsName("TeleportBackwardS"))
         {
@@ -147,16 +156,15 @@ public class TeleportScript : MonoBehaviour
         }
 
         Debug.Log("Teleporting Shadow Finished");
-
-        shadow = null;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Shadow"))
         {
+            shadow.Add(collision.gameObject);
+
             Debug.Log("Shadow has entered Teleport Trigger");
-            shadow = collision.gameObject;
         }
     }
 }

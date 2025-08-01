@@ -14,7 +14,10 @@ public class DoorScript : MonoBehaviour
 
     [SerializeField] private AudioClip openingDoor;
 
-    [SerializeField] private GameObject shadow;
+    [SerializeField] private List<GameObject> shadow = new List<GameObject>();
+    [SerializeField] private GameObject currentShadow;
+
+    private int indexForShadow;
 
     private void Start()
     {
@@ -38,11 +41,17 @@ public class DoorScript : MonoBehaviour
         }
     }
 
-    public void ShadowTeleport()
+    public void ShadowOpenDoor()
     {
         PlaySound();
 
-        shadow.transform.position = emptyExit.position;
+        foreach (GameObject gameObject in shadow)
+        {
+            shadow[indexForShadow].transform.position = emptyExit.position;
+            indexForShadow++;
+        }
+
+        indexForShadow = 0;
     }
 
     public void UnlockDoor()
@@ -64,8 +73,8 @@ public class DoorScript : MonoBehaviour
     {
         if (collision.CompareTag("Shadow"))
         {
+            shadow.Add(collision.gameObject);
             Debug.Log("Shadow has entered Door Trigger");
-            shadow = collision.gameObject;
         }
     }
 }
