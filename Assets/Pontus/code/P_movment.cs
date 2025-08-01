@@ -16,6 +16,7 @@ public static class Tracking
     public static int currentShadow = 1;
     public static int boxMov = 0;
     public static bool reset = false;
+    public static Vector2 chestPosision;
 }
 
 public class P_movment : MonoBehaviour
@@ -33,8 +34,11 @@ public class P_movment : MonoBehaviour
     private Vector2 ChestlaserV2;
     public TextMeshProUGUI Moves;
 
+    private Vector2 chestStartPos;
+
     public static Animator playerAnimator;
     public static bool isPlayingTeleAnimation;
+    private Vector2 respanePiont;
 
     public GameObject Chest;
     private float ChestxPos;
@@ -51,11 +55,14 @@ public class P_movment : MonoBehaviour
         cam = Camera.main;
         Player = gameObject;
 
+        chestStartPos = Chester.chestStartPosision;
+
         playerAnimator = GetComponent<Animator>();
 
     }
     private void Update()
     {
+        Tracking.chestPosision = Chest.transform.position;
         xPos = Mathf.RoundToInt(Player.transform.position.x);
         yPos = Mathf.RoundToInt(Player.transform.position.y);
         ChestxPos = Mathf.RoundToInt(Chest.transform.position.x);
@@ -191,7 +198,15 @@ public class P_movment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             Tracking.reset = true;
-            Player.transform.position = new Vector2(0, 0);
+            Player.transform.position = respanePiont;
+            Chest.transform.position = chestStartPos;
+            StartCoroutine(ResetTimers());
+
+        } if ( TeleportScript.continuesOnToNextLevel) 
+        {
+            Tracking.reset = true;
+            Chest.transform.position = chestStartPos;
+            respanePiont = Player.transform.position;
 
         }
 
@@ -199,10 +214,12 @@ public class P_movment : MonoBehaviour
         if (Tracking.moves == 0 && !hasSpawnedShadow)
         {
             hasSpawnedShadow = true;
-            Player.transform.position = new Vector2(0, 0); // Optional: move player to reset point
+            Player.transform.position = respanePiont; // Optional: move player to reset point
             Instantiate(shadow, Player.transform.position, Player.transform.rotation);
             Tracking.shadowOrder++;
-           
+            Chest.transform.position = chestStartPos;
+            Debug.Log("chestPos" + chestStartPos);
+
 
             StartCoroutine(timerss());
 

@@ -14,6 +14,7 @@ public class sadow_Mov : MonoBehaviour
     private float ChestyPos;
     private bool canStart = false;
     private Vector2 startPos;
+
     private bool hasTriggered = false;
 
     public static Animator shadowAnimator;
@@ -27,25 +28,28 @@ public class sadow_Mov : MonoBehaviour
         startPos = Shadow.transform.position;
         canStart = true;
 
+
         shadowAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (Tracking.reset) 
-        {
-            Destroy(gameObject);
-        }
+
         if(Tracking.moves == 0 &&  canStart && !hasTriggered) 
         {
             hasTriggered = true;
             Debug.Log("o skibidi wherew have you goon my name is ohio and  i somting to goon on o skibbidi...");
             Shadow.transform.position = startPos;
-            Chest.transform.position = startPos;
+
             StartCoroutine(PlayShadowMoves());
 
             canStart = false;
             
+        }
+        if (Tracking.reset)
+        {
+
+            Destroy(gameObject);
         }
     }
     IEnumerator PlayShadowMoves()
