@@ -128,7 +128,7 @@ public class TeleportScript : MonoBehaviour
 
         AnimatorStateInfo stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
 
-        while (stateInfo.IsName("TeleportAnim"))
+        while (stateInfo.IsName("TeleportForwardS"))
         {
             yield return null;
             stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
@@ -140,7 +140,7 @@ public class TeleportScript : MonoBehaviour
 
         shadow.transform.position = emptyExit.position;
 
-        while (stateInfo.IsName("TeleportBackAnim"))
+        while (stateInfo.IsName("TeleportBackwardS"))
         {
             yield return null;
             stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
