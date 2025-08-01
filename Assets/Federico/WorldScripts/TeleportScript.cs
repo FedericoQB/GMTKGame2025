@@ -10,7 +10,7 @@ public class TeleportScript : MonoBehaviour
     public bool isLocked;
 
     public int nextLevelIndex;
-    [SerializeField] private bool continuesOnToNextLevel;
+    [SerializeField] public static bool continuesOnToNextLevel;
 
     [SerializeField] private AudioClip teleporting;
 
@@ -25,7 +25,7 @@ public class TeleportScript : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         spriteRenderer = GetComponent<SpriteRenderer>();
-        ExitStuff.emptyExitGlobal = emptyExit;
+        ExitTeleport.emptyExitGlobal = emptyExit;
 
         if (isLocked)
         {
@@ -161,7 +161,7 @@ public class TeleportScript : MonoBehaviour
     }
 }
 
-public static class ExitStuff
+public static class ExitTeleport
 {
     public static Transform emptyExitGlobal;
 }
