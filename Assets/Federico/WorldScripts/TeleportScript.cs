@@ -61,9 +61,9 @@ public class TeleportScript : MonoBehaviour
         PlaySound();
 
 
-        foreach (GameObject gameObject in shadow)
+        foreach (GameObject shadowObject in shadow)
         {
-            //TeleportAnimationShadow();
+            TeleportAnimationShadow(shadowObject);
         }
     }
 
@@ -123,27 +123,29 @@ public class TeleportScript : MonoBehaviour
     // This is for animations of Shadow Figures
     private void TeleportAnimationShadow(GameObject shadowObject)
     {
+        Animator shadowAnimator = shadowObject.GetComponent<sadow_Mov>().shadowAnimator;
+        bool isPlayingTeleAnimation = shadowObject.GetComponent<sadow_Mov>().isPlayingTeleAnimation;
+
         Debug.Log("Teleporting Shadow");
-        //shadowObject.GetComponent<sadow_Mov>().Shadow // Make this line get the animator component from each individual gameobject
-        sadow_Mov.shadowAnimator.SetBool("isTeleporting", true);
-        StartCoroutine(WaitForTeleportAnimationShadow());
+        shadowAnimator.SetBool("isTeleporting", true);
+        StartCoroutine(WaitForTeleportAnimationShadow(shadowAnimator, isPlayingTeleAnimation));
     }
 
-    private IEnumerator WaitForTeleportAnimationShadow()
+    private IEnumerator WaitForTeleportAnimationShadow(Animator shadowAnimator, bool isPlayingTeleAnimation)
     {
         yield return null;
 
-        AnimatorStateInfo stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
+        AnimatorStateInfo stateInfo = shadowAnimator.GetCurrentAnimatorStateInfo(0);
 
         while (stateInfo.IsName("TeleportForwardS"))
         {
             yield return null;
-            stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
+            stateInfo = shadowAnimator.GetCurrentAnimatorStateInfo(0);
         }
         yield return new WaitForSeconds(1.3f);
 
-        sadow_Mov.isPlayingTeleAnimation = false;
-        sadow_Mov.shadowAnimator.SetBool("isTeleporting", false);
+        isPlayingTeleAnimation = false;
+        shadowAnimator.SetBool("isTeleporting", false);
 
         foreach (GameObject gameObject in shadow)
         {
@@ -156,7 +158,7 @@ public class TeleportScript : MonoBehaviour
         while (stateInfo.IsName("TeleportBackwardS"))
         {
             yield return null;
-            stateInfo = sadow_Mov.shadowAnimator.GetCurrentAnimatorStateInfo(0);
+            stateInfo = shadowAnimator.GetCurrentAnimatorStateInfo(0);
         }
 
         Debug.Log("Teleporting Shadow Finished");

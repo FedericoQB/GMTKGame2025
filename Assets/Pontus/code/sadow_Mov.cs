@@ -17,8 +17,8 @@ public class sadow_Mov : MonoBehaviour
 
     private bool hasTriggered = false;
 
-    public static Animator shadowAnimator;
-    public static bool isPlayingTeleAnimation;
+    public Animator shadowAnimator;
+    public bool isPlayingTeleAnimation;
 
     private void Start()
     {

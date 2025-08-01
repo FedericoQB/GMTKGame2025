@@ -6,7 +6,7 @@ public class BackgroundGenerationScript : MonoBehaviour
 {
     public GameObject backgroundPrefab;
 
-
+    GameObject previousGenerated;
 
 
     // Start is called before the first frame update
