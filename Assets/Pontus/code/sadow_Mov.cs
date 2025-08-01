@@ -32,6 +32,10 @@ public class sadow_Mov : MonoBehaviour
 
     private void Update()
     {
+        if (Tracking.reset) 
+        {
+            Destroy(gameObject);
+        }
         if(Tracking.moves == 0 &&  canStart && !hasTriggered) 
         {
             hasTriggered = true;

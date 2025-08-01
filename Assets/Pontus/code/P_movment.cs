@@ -15,6 +15,7 @@ public static class Tracking
     public static int shadowOrder = 1;
     public static int currentShadow = 1;
     public static int boxMov = 0;
+    public static bool reset = false;
 }
 
 public class P_movment : MonoBehaviour
@@ -38,6 +39,7 @@ public class P_movment : MonoBehaviour
     public GameObject Chest;
     private float ChestxPos;
     private float ChestyPos;
+
 
     public GameObject shadow;
     private void Start()
@@ -186,6 +188,12 @@ public class P_movment : MonoBehaviour
 
             Moves.text = Tracking.moves.ToString();
         }
+        if (Input.GetKeyDown(KeyCode.R)) 
+        {
+            Tracking.reset = true;
+            Player.transform.position = new Vector2(0, 0);
+
+        }
 
         // When moves run out, spawn the shadow and reset
         if (Tracking.moves == 0 && !hasSpawnedShadow)
@@ -208,6 +216,13 @@ public class P_movment : MonoBehaviour
         Tracking.moves = Tracking.maxMoves;
         Moves.text = Tracking.moves.ToString();
         hasSpawnedShadow = false;
+    }
+    IEnumerator ResetTimers()
+    {
+
+
+        yield return new WaitForSeconds(0.2f);
+        Tracking.reset = false;
     }
 
 }
