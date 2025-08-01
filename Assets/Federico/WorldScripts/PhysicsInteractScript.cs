@@ -11,9 +11,21 @@ public class PhysicsInteractScript : MonoBehaviour
     public UnityEvent pushedDownAction; // Pushed down and event will Invoke
     public UnityEvent pushedUpAction;   // Pushed up and event will Invoke
 
+    public Sprite buttonActivatedSprite;
+    public Sprite buttonDeactivatedSprite;
+
     void Start()
     {
         previousIsOnTop = IsOnTop; // Initialize previous state
+
+        if (IsOnTop)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = buttonDeactivatedSprite;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = buttonActivatedSprite;
+        }
     }
 
     void Update()
@@ -23,10 +35,14 @@ public class PhysicsInteractScript : MonoBehaviour
             if (IsOnTop)
             {
                 pushedDownAction.Invoke();
+
+                gameObject.GetComponent<SpriteRenderer>().sprite = buttonActivatedSprite;
             }
             else
             {
                 pushedUpAction.Invoke();
+
+                gameObject.GetComponent<SpriteRenderer>().sprite = buttonActivatedSprite;
             }
 
             previousIsOnTop = IsOnTop; // Update tracked state
