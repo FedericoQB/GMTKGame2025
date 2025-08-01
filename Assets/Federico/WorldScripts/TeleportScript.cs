@@ -57,7 +57,7 @@ public class TeleportScript : MonoBehaviour
     {
         PlaySound();
 
-        TeleportAnimationShadow(); // IMPORTANT NOTICE. EDIT THE SHADOW SCRIPT TO HAVE ANIMATOR AND SAME VALUES FOR THIS FUNCTION TO WORK
+        TeleportAnimationShadow();
     }
 
     public void ActivateTeleporter()
