@@ -60,7 +60,11 @@ public class TeleportScript : MonoBehaviour
     {
         PlaySound();
 
-        TeleportAnimationShadow();
+
+        foreach (GameObject gameObject in shadow)
+        {
+            //TeleportAnimationShadow();
+        }
     }
 
     public void ActivateTeleporter()
@@ -117,11 +121,11 @@ public class TeleportScript : MonoBehaviour
     }
 
     // This is for animations of Shadow Figures
-    private void TeleportAnimationShadow()
+    private void TeleportAnimationShadow(GameObject shadowObject)
     {
         Debug.Log("Teleporting Shadow");
-        sadow_Mov.isPlayingTeleAnimation = true;
-        sadow_Mov.shadowAnimator.SetBool("isTeleporting", true); // Set the animator scripts and functions into Pontus Player movement
+        //shadowObject.GetComponent<sadow_Mov>().Shadow // Make this line get the animator component from each individual gameobject
+        sadow_Mov.shadowAnimator.SetBool("isTeleporting", true);
         StartCoroutine(WaitForTeleportAnimationShadow());
     }
 
