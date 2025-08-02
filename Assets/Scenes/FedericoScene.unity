@@ -363,6 +363,8 @@ MonoBehaviour:
   emptyExit: {fileID: 838192217}
   isLocked: 0
   nextLevelIndex: 2
+  continuesOnToNextLevel: 0
+  nextSceneName: 
   teleporting: {fileID: 8300000, guid: 1b9e5880639cef9469ddc40e133d3bb2, type: 3}
   turnedOn: {fileID: 0}
   turnedOff: {fileID: 0}
@@ -980,6 +982,8 @@ MonoBehaviour:
   emptyExit: {fileID: 1220651821}
   isLocked: 0
   nextLevelIndex: 2
+  continuesOnToNextLevel: 0
+  nextSceneName: 
   teleporting: {fileID: 8300000, guid: 1b9e5880639cef9469ddc40e133d3bb2, type: 3}
   turnedOn: {fileID: 0}
   turnedOff: {fileID: 0}
@@ -6777,6 +6781,10 @@ PrefabInstance:
       propertyPath: nextLevelIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1680337645535212083, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
+      propertyPath: continuesOnToNextLevel
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6227129011246025493, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22
@@ -8026,6 +8034,10 @@ PrefabInstance:
     - target: {fileID: 940210759075027118, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.94469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680337645535212083, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
+      propertyPath: continuesOnToNextLevel
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2033526107206746801, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
       propertyPath: m_Size.x
