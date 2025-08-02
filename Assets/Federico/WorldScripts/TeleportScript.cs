@@ -21,10 +21,12 @@ public class TeleportScript : MonoBehaviour
     [SerializeField] private Sprite turnedOn;
     [SerializeField] private Sprite turnedOff;
 
+    /*
     [SerializeField] private List<GameObject> shadow = new List<GameObject>();
     [SerializeField] private GameObject currentShadow;
 
     int indexForShadow = 0;
+    */
 
     private void Start()
     {
@@ -58,15 +60,23 @@ public class TeleportScript : MonoBehaviour
         }
     }
 
-    public void ShadowTeleport()
+    public void ShadowTeleport(GameObject shadowObject)
     {
+
         PlaySound();
 
-        indexForShadow = 0;
+        TeleportAnimationShadow(shadowObject);
+
+        /*
         foreach (GameObject shadowObject in shadow)
         {
+            Debug.Log("This is " + shadowObject);
+
             TeleportAnimationShadow(shadowObject);
         }
+
+        shadow.Clear();
+        */
     }
 
     public void ActivateTeleporter()
@@ -139,34 +149,40 @@ public class TeleportScript : MonoBehaviour
 
         Debug.Log("Teleporting Shadow");
         shadowAnimator.SetBool("isTeleporting", true);
-        StartCoroutine(WaitForTeleportAnimationShadow(shadowAnimator, isPlayingTeleAnimation));
+        StartCoroutine(WaitForTeleportAnimationShadow(shadowAnimator, isPlayingTeleAnimation, shadowObject));
     }
 
-    private IEnumerator WaitForTeleportAnimationShadow(Animator shadowAnimator, bool isPlayingTeleAnimation)
+    private IEnumerator WaitForTeleportAnimationShadow(Animator shadowAnimator, bool isPlayingTeleAnimation, GameObject shadowObject)
     {
         yield return null;
 
         AnimatorStateInfo stateInfo = shadowAnimator.GetCurrentAnimatorStateInfo(0);
 
+        /*
         while (stateInfo.IsName("TeleportForwardS"))
         {
             yield return null;
             stateInfo = shadowAnimator.GetCurrentAnimatorStateInfo(0);
         }
         yield return new WaitForSeconds(1.3f);
+        */
 
         isPlayingTeleAnimation = false;
         shadowAnimator.SetBool("isTeleporting", false);
 
-        
+        shadowObject.transform.position = emptyExit.position;
+
+        // FIX THAT THE FIRST SHADOW ENTERS THE PORTAL AND NOT IN THE SECOND LOOP. IT is probably because it checks the list twice, and it only registers after the second time
+        /*
+         * IT SEEMS TO BE FIXED, THOUGH IF IT OCCURS AGAIN. THE PROBLEM IS IT REGISTERS AFTER THE CODE RUNS SO THE SHADOWS DOESNT MAKE IT IN TIME
         indexForShadow = 0;
-        foreach (GameObject gameObject in shadow) // FIX THAT THE FIRST SHADOW ENTERS THE PORTAL AND NOT IN THE SECOND LOOP. IT is probably because it checks the list twice, and it only registers after the second time
+        foreach (GameObject gameObject in shadow)
         {
             shadow[indexForShadow].transform.position = emptyExit.position;
             indexForShadow++;
         }
-
         indexForShadow = 0;
+        */
 
         while (stateInfo.IsName("TeleportBackwardS"))
         {
@@ -175,13 +191,17 @@ public class TeleportScript : MonoBehaviour
         }
 
         Debug.Log("Teleporting Shadow Finished");
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Shadow"))
         {
-            shadow.Add(collision.gameObject);
+            //shadow.Add(collision.gameObject);
+
+            ShadowTeleport(collision.gameObject);
 
             Debug.Log("Shadow has entered Teleport Trigger");
         }
