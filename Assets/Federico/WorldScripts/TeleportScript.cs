@@ -128,7 +128,7 @@ public class TeleportScript : MonoBehaviour
         }
         else if (!continuesOnToNextLevel)
         {
-            player.transform.position = emptyExit.position;
+            player.transform.position = new Vector3(emptyExit.position.x, emptyExit.position.y, 0);
 
             while (stateInfo.IsName("TeleportBackAnim"))
             {
@@ -170,7 +170,7 @@ public class TeleportScript : MonoBehaviour
         isPlayingTeleAnimation = false;
         shadowAnimator.SetBool("isTeleporting", false);
 
-        shadowObject.transform.position = emptyExit.position;
+        shadowObject.transform.position = new Vector3(emptyExit.position.x, emptyExit.position.y, 0);
 
         // FIX THAT THE FIRST SHADOW ENTERS THE PORTAL AND NOT IN THE SECOND LOOP. IT is probably because it checks the list twice, and it only registers after the second time
         /*
