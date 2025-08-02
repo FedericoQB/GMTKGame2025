@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeleportScript : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class TeleportScript : MonoBehaviour
     public bool isLocked;
 
     public int nextLevelIndex;
-    [SerializeField] public static bool continuesOnToNextLevel;
+    [SerializeField] private bool continuesOnToNextLevel;
+    [SerializeField] private string nextSceneName;
 
     [SerializeField] private AudioClip teleporting;
 
@@ -109,12 +111,19 @@ public class TeleportScript : MonoBehaviour
         P_movment.isPlayingTeleAnimation = false;
         P_movment.playerAnimator.SetBool("isTeleporting", false);
 
-        player.transform.position = emptyExit.position;
-
-        while (stateInfo.IsName("TeleportBackAnim"))
+        if (continuesOnToNextLevel)
         {
-            yield return null;
-            stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else if (!continuesOnToNextLevel)
+        {
+            player.transform.position = emptyExit.position;
+
+            while (stateInfo.IsName("TeleportBackAnim"))
+            {
+                yield return null;
+                stateInfo = P_movment.playerAnimator.GetCurrentAnimatorStateInfo(0);
+            }
         }
 
         Debug.Log("Teleporting Finished");
