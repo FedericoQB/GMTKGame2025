@@ -7,11 +7,9 @@ public class LampActivationScript : MonoBehaviour
     public int lampIndex;
     [SerializeField] private AudioClip successAudio;
 
-    public void ActivateLamp()
+    public void ActivateTorch()
     {
         Debug.Log("LampActivated");
-
-        ExitDoorScript.lamps[lampIndex] = true;
         SoundFXManager.instance.PlaySoundFXClip(successAudio, transform, 1);
     }
 }
