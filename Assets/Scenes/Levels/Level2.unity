@@ -137,11 +137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 285866967389055683, guid: c0fcfec8ff97f534088df2aaee41a10c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.057472233
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 285866967389055683, guid: c0fcfec8ff97f534088df2aaee41a10c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.029453188
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285866967389055683, guid: c0fcfec8ff97f534088df2aaee41a10c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -423,9 +423,21 @@ PrefabInstance:
       propertyPath: testText
       value: 
       objectReference: {fileID: 2035965880}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.data[0].text
+      value: There's multiple deactivated teleporters?
+      objectReference: {fileID: 0}
     - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: m_Name
       value: ChatManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985127367970428943, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: playerTextBox
@@ -529,17 +541,57 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
       propertyPath: pushedDownAction.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
       propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1980717262}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1600820881}
     - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
       propertyPath: pushedDownAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1980717262}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedDownAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1600820881}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DeactivateTeleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedDownAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ActivateTeleporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TeleportScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedDownAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TeleportScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459897668793655830, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
+      propertyPath: pushedUpAction.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8166471590108055139, guid: aa8d96a62a44df448b7f8d7abd740c83, type: 3}
       propertyPath: m_Name
       value: Button
@@ -2214,6 +2266,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.1806326
       objectReference: {fileID: 0}
+    - target: {fileID: 1680337645535212083, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
+      propertyPath: isLocked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6227129011246025493, guid: 66e963f11081e7c418541e9b1d0f75d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -2299,6 +2355,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1756444268}
+  - component: {fileID: 1756444272}
+  - component: {fileID: 1756444271}
+  - component: {fileID: 1756444270}
+  - component: {fileID: 1756444269}
   m_Layer: 0
   m_Name: WallColliders
   m_TagString: Wall
@@ -2321,6 +2381,186 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1756444269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756444267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5, y: -8.12}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.15, y: 2.0100002}
+  m_EdgeRadius: 0
+--- !u!61 &1756444270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756444267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5, y: 7.42}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.15, y: 3.0100002}
+  m_EdgeRadius: 0
+--- !u!61 &1756444271
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756444267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -4.6, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 16.59}
+  m_EdgeRadius: 0
+--- !u!61 &1756444272
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756444267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 16.59}
+  m_EdgeRadius: 0
 --- !u!1001 &1786165929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2486,13 +2726,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 452263635289916032, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2398141227635115116, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 5210812189672549473, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6677456140818496883, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_Pivot.x
