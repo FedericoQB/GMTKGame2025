@@ -24,7 +24,7 @@ public class TeleportScript : MonoBehaviour
     [SerializeField] private List<GameObject> shadow = new List<GameObject>();
     [SerializeField] private GameObject currentShadow;
 
-    int indexForShadow;
+    int indexForShadow = 0;
 
     private void Start()
     {
@@ -62,7 +62,7 @@ public class TeleportScript : MonoBehaviour
     {
         PlaySound();
 
-
+        indexForShadow = 0;
         foreach (GameObject shadowObject in shadow)
         {
             TeleportAnimationShadow(shadowObject);
@@ -87,6 +87,7 @@ public class TeleportScript : MonoBehaviour
     }
 
     // This is for Player Animations
+
     private void TeleportAnimation()
     {
         Debug.Log("Teleporting");
@@ -130,6 +131,7 @@ public class TeleportScript : MonoBehaviour
     }
 
     // This is for animations of Shadow Figures
+
     private void TeleportAnimationShadow(GameObject shadowObject)
     {
         Animator shadowAnimator = shadowObject.GetComponent<sadow_Mov>().shadowAnimator;
@@ -156,7 +158,9 @@ public class TeleportScript : MonoBehaviour
         isPlayingTeleAnimation = false;
         shadowAnimator.SetBool("isTeleporting", false);
 
-        foreach (GameObject gameObject in shadow)
+        
+        indexForShadow = 0;
+        foreach (GameObject gameObject in shadow) // FIX THAT THE FIRST SHADOW ENTERS THE PORTAL AND NOT IN THE SECOND LOOP. IT is probably because it checks the list twice, and it only registers after the second time
         {
             shadow[indexForShadow].transform.position = emptyExit.position;
             indexForShadow++;
