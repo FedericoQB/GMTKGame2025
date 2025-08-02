@@ -52,7 +52,7 @@ public class TeleportScript : MonoBehaviour
 
             TeleportAnimation();
 
-            if (continuesOnToNextLevel) LevelManager.currentLevel = nextLevelIndex;
+            if (continuesOnToNextLevel) LevelManager.totalTorches++;
         }
         else
         {

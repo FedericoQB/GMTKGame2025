@@ -33,7 +33,7 @@ public class DoorScript : MonoBehaviour
 
             player.transform.position = emptyExit.position;
 
-            if (continuesOnToNextLevel) LevelManager.currentLevel = nextLevelIndex;
+            if (continuesOnToNextLevel) LevelManager.totalTorches = nextLevelIndex;
         }
         else
         {
