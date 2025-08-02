@@ -58,6 +58,7 @@ public class P_movment : MonoBehaviour
         chestStartPos = Chester.chestStartPosision;
 
         playerAnimator = GetComponent<Animator>();
+        respanePiont = Player.transform.position;
 
     }
     private void Update()
