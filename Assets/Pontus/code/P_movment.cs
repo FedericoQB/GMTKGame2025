@@ -67,6 +67,10 @@ public class P_movment : MonoBehaviour
         yPos = Mathf.RoundToInt(Player.transform.position.y);
         ChestxPos = Mathf.RoundToInt(Chest.transform.position.x);
         ChestyPos = Mathf.RoundToInt(Chest.transform.position.y);
+        if (Input.GetKeyDown(KeyCode.E)) 
+        {
+            Tracking.moves = 0;
+        }
 
         // W = Up
         if (Input.GetKeyDown(KeyCode.W) && Tracking.moves > 0)
