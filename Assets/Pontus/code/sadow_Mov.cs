@@ -38,7 +38,6 @@ public class sadow_Mov : MonoBehaviour
         if(Tracking.moves == 0 &&  canStart && !hasTriggered) 
         {
             hasTriggered = true;
-            Debug.Log("o skibidi wherew have you goon my name is ohio and  i somting to goon on o skibbidi...");
             Shadow.transform.position = startPos;
 
             StartCoroutine(PlayShadowMoves());

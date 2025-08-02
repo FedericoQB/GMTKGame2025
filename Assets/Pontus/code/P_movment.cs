@@ -55,7 +55,7 @@ public class P_movment : MonoBehaviour
         cam = Camera.main;
         Player = gameObject;
 
-        chestStartPos = Chester.chestStartPosision;
+
 
         playerAnimator = GetComponent<Animator>();
         respanePiont = Player.transform.position;
@@ -71,6 +71,12 @@ public class P_movment : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             Tracking.moves = 0;
+        }
+        if (Chester.cantakePos) 
+        {
+            chestStartPos = Chester.chestStartPosision;
+            Debug.Log(chestStartPos + "chestpos23");
+            Chester.cantakePos = false; 
         }
 
         // W = Up
@@ -217,7 +223,6 @@ public class P_movment : MonoBehaviour
             Instantiate(shadow, Player.transform.position, Player.transform.rotation);
             Tracking.shadowOrder++;
             Chest.transform.position = chestStartPos;
-            Debug.Log("chestPos" + chestStartPos);
 
 
             StartCoroutine(timerss());
