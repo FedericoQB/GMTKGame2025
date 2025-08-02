@@ -202,13 +202,7 @@ public class P_movment : MonoBehaviour
             Chest.transform.position = chestStartPos;
             StartCoroutine(ResetTimers());
 
-        } if ( TeleportScript.continuesOnToNextLevel) 
-        {
-            Tracking.reset = true;
-            Chest.transform.position = chestStartPos;
-            respanePiont = Player.transform.position;
-
-        }
+        } 
 
         // When moves run out, spawn the shadow and reset
         if (Tracking.moves == 0 && !hasSpawnedShadow)
