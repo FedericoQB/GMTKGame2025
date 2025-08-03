@@ -330,6 +330,15 @@ PrefabInstance:
       propertyPath: testText
       value: 
       objectReference: {fileID: 1906360549}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.data[1].text
+      value: Hello Claire. As you can see, you are stuck in a dungeon. If you want
+        to leave, just press the button and get to the teleporter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.data[2].text
+      value: I gotta escape!!
+      objectReference: {fileID: 0}
     - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: m_Name
       value: ChatManager
