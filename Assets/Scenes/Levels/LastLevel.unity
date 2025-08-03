@@ -750,6 +750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChatManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4985127367970428943, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: playerTextBox
       value: 
@@ -1776,7 +1780,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 452263635289916032, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1943407793178109949, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
@@ -1792,7 +1796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210812189672549473, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6646226682941034518, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
@@ -1881,6 +1885,10 @@ PrefabInstance:
     - target: {fileID: 7253707708609441634, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7447325969482696342, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8615243940318178879, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_IsActive
