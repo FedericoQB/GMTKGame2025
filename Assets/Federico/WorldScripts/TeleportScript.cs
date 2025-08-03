@@ -12,6 +12,9 @@ public class TeleportScript : MonoBehaviour
 
     public int nextLevelIndex;
     [SerializeField] private bool continuesOnToNextLevel;
+
+    public static bool nextLevel;
+
     [SerializeField] private string nextSceneName;
 
     [SerializeField] private AudioClip teleporting;
@@ -124,6 +127,7 @@ public class TeleportScript : MonoBehaviour
 
         if (continuesOnToNextLevel)
         {
+            nextLevel = true;
             SceneManager.LoadScene(nextSceneName);
         }
         else if (!continuesOnToNextLevel)
