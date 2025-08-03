@@ -78,6 +78,10 @@ public class P_movment : MonoBehaviour
             Debug.Log(chestStartPos + "chestpos23");
             Chester.cantakePos = false; 
         }
+        if (TeleportScript.nextLevel) 
+        {
+            Tracking.tracking.Clear();
+        }
 
         // W = Up
         if (Input.GetKeyDown(KeyCode.W) && Tracking.moves > 0)
