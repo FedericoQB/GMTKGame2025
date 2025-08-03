@@ -330,9 +330,22 @@ PrefabInstance:
       propertyPath: testText
       value: 
       objectReference: {fileID: 1906360549}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.data[1].text
+      value: Hello Claire. As you can see, you are stuck in a dungeon. If you want
+        to leave, just press the button and get to the teleporter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006623152610569939, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: initialDialogueLines.Array.data[2].text
+      value: I gotta escape!!
+      objectReference: {fileID: 0}
     - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: m_Name
       value: ChatManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221992563570231973, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4985127367970428943, guid: 7f1479233b808684bb923f00213e18f9, type: 3}
       propertyPath: playerTextBox
@@ -3417,6 +3430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 452263635289916032, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2398141227635115116, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -3432,6 +3449,10 @@ PrefabInstance:
     - target: {fileID: 4873462021416432354, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 672.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210812189672549473, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6677456140818496883, guid: ad4404c87f6892a4ebe120514ca7061a, type: 3}
       propertyPath: m_Pivot.x
