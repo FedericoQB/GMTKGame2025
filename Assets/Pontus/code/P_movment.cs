@@ -81,6 +81,7 @@ public class P_movment : MonoBehaviour
         if (TeleportScript.nextLevel) 
         {
             Tracking.tracking.Clear();
+            TeleportScript.nextLevel = false;
         }
 
         // W = Up
