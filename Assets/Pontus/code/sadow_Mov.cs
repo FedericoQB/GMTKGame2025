@@ -157,7 +157,6 @@ public class sadow_Mov : MonoBehaviour
                             Chest.transform.rotation = Quaternion.Euler(0, 180, 0);
                         }
                     }
-
                     else if (hit == null || !hit.CompareTag(Tags.Wall)) 
                     {
                         Shadow.transform.position = new Vector2(xPos - 1, yPos);
