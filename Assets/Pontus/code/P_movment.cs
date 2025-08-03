@@ -217,6 +217,7 @@ public class P_movment : MonoBehaviour
             Player.transform.position = respanePiont;
             Chest.transform.position = chestStartPos;
             StartCoroutine(ResetTimers());
+            Tracking.tracking.Clear();
 
         } 
 
